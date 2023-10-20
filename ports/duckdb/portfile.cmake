@@ -10,7 +10,7 @@ vcpkg_from_github(
             fix_config_file_path.patch
             set_third_party_libs_to_obj.patch
             add_version_pass_through.patch
-            remove-failing-template-spec.patch
+            add-weird-template-spec.patch
 )
 
 string(COMPARE EQUAL "${VCPKG_LIBRARY_LINKAGE}" "static" DUCKDB_BUILD_STATIC)
