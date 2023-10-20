@@ -10,7 +10,7 @@ vcpkg_from_github(
             fix_config_file_path.patch
             set_third_party_libs_to_obj.patch
             add_version_pass_through.patch
-            disable_static_build.patch
+            remove-failing-template-spec.patch
 )
 
 string(COMPARE EQUAL "${VCPKG_LIBRARY_LINKAGE}" "static" DUCKDB_BUILD_STATIC)
@@ -36,7 +36,6 @@ endif()
 
 vcpkg_cmake_configure(
         SOURCE_PATH ${SOURCE_PATH}
-        WINDOWS_USE_MSBUILD
         OPTIONS
             -DDUCKDB_OVERWRITE_COMMIT_ID=${DUCKDB_SHORT_HASH}
             -DDUCKDB_OVERWRITE_VERSION=${DUCKDB_VERSION}
@@ -46,7 +45,6 @@ vcpkg_cmake_configure(
             "${DONT_BUILD_SHELL_FLAG}"
             -DENABLE_EXTENSION_AUTOLOADING=1
             -DENABLE_EXTENSION_AUTOINSTALL=1
-            -DDISABLE_UNITY=1
 )
 vcpkg_cmake_install()
 
