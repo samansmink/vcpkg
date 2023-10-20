@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 082bb28cdf..7e3ee6df43 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -305,7 +305,7 @@ option(EXTENSION_STATIC_BUILD
+         FALSE)
+ 
+ if(WIN32 OR ZOS)
+-  set(EXTENSION_STATIC_BUILD TRUE)
++  set(EXTENSION_STATIC_BUILD FALSE)
+ endif()
+ 
+ option(BUILD_EXTENSIONS_ONLY "Build all extension as linkable, overriding DONT_LINK, and don't build core." FALSE)
