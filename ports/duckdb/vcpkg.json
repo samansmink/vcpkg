@@ -4,7 +4,7 @@
   "description": "High-performance in-process analytical database system",
   "homepage": "https://duckdb.org",
   "license": "MIT",
-  "supports": "x64 | (arm64 & !windows)",
+  "supports": "!(uwp | android | (windows & arm64))",
   "dependencies": [
     {
       "name": "vcpkg-cmake",
