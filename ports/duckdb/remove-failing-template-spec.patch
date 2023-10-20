@@ -1,0 +1,14 @@
+diff --git a/extension/parquet/column_writer.cpp b/extension/parquet/column_writer.cpp
+index e9ef6e8818..e977d43c50 100644
+--- a/extension/parquet/column_writer.cpp
++++ b/extension/parquet/column_writer.cpp
+@@ -1987,9 +1987,6 @@ unique_ptr<ColumnWriter> ColumnWriter::CreateWriterRecursive(vector<duckdb_parqu
+ 	case LogicalTypeId::TIMESTAMP_MS:
+ 		return make_uniq<StandardColumnWriter<int64_t, int64_t>>(writer, schema_idx, std::move(schema_path), max_repeat,
+ 		                                                         max_define, can_have_nulls);
+-	case LogicalTypeId::TIME_TZ:
+-		return make_uniq<StandardColumnWriter<dtime_tz_t, int64_t, ParquetTimeTZOperator>>(
+-		    writer, schema_idx, std::move(schema_path), max_repeat, max_define, can_have_nulls);
+ 	case LogicalTypeId::HUGEINT:
+ 		return make_uniq<StandardColumnWriter<hugeint_t, double, ParquetHugeintOperator>>(
+ 		    writer, schema_idx, std::move(schema_path), max_repeat, max_define, can_have_nulls);
