@@ -44,6 +44,7 @@ vcpkg_cmake_configure(
             "${DONT_BUILD_SHELL_FLAG}"
             -DENABLE_EXTENSION_AUTOLOADING=1
             -DENABLE_EXTENSION_AUTOINSTALL=1
+            -DDISABLE_UNITY=1
 )
 vcpkg_cmake_install()
 
